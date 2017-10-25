@@ -8,7 +8,7 @@ Please refrain from using external libraries other than jQuery and Bootstrap.  W
 
 Here you are given an HTML, JSON, javascript and css file that pull data from the JSON file and display it for the user to see. In order to work, this challenge must be hosted on a web server of some kind, because the Javascript code does make some AJAX calls.  We've found MAMP to be an easy and convenient way to do this, if you don't already have a favorite way.  If you have it set up correctly, you should see something like this screenshot when you navigate to index.html:
 
-<img src="http://careers.touchofmodern.com/img/front-end-challenge-screenshot.png"/>  
+<img src="https://github.com/WhitehawkVentures/FrontEndChallenge/blob/master/img/front-end-challenge-screenshot.png?raw=true"/>  
 
 ## Tasks to complete
 
