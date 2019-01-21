@@ -20,6 +20,28 @@ Please complete the following tasks:
 4. Perform a few style edits: link colors should be #0096ff, The title of the page should be 36 pixels high. The tagline of the page should be 18. Title of each product should be 16 pixels high. The product tagline should be 16. Center everything on the page including titles and the products display. 
 5. The way we load products is buggy and suboptimal.  Try refactoring it to work better and tell us why you did what you did.
 
+
+
+[ x ] In addition to its title and tagline, each product has an attribute named "description". We'd like to update the UI so that whenever you mouseover a product, an overlay comes across it with the description.
+ - Line 152 to 166 in script.js
+ 
+[ x ] Convert the page to use Bootstrap to make it responsive, so when it's viewed on a mobile device there's no left-right scrolling and it still looks ok visually (i.e. it's easy to read) 
+- Took advantage of Bootstrap's row, justify-content-md-center, col-xs-9, col-sm-5, col-md-3, glyphicon
+
+[ x ] Add an "X" in the top right corner of each product. When you click on it, have it remove itself from the page. 
+- Modify product-template.html to add button element using glyphicon-remove class icon
+- Line 65, 122 - 145 in script.js
+- Line 68 - 75 in script.js is where I thought about accessibility and how important for user to be able to use key 'Enter' to remove product
+
+[ x ] Perform a few style edits: link colors should be #0096ff, The title of the page should be 36 pixels high. The tagline of the page should be 18. Title of each product should be 16 pixels high. The product tagline should be 16. Center everything on the page including titles and the products display. 
+[ x ] The way we load products is buggy and suboptimal.  Try refactoring it to work better and tell us why you did what you did.
+- Instead of using jquery ajax or getJSON method, I used async, await, and setTimeout for refactoring
+- This asynchronously reads and parses a JSON file. Used await and fetch promise to get the response Once the response has been made, use .json() to parse the body text as JSON
+- For error handle, I implemented try and catch if JSON file fails
+- To fetch JSON data asynchronously, I added async to getJSONData function and it returns a Promise object, products
+- By using .then() method, I was able to render the HTML content once I got the products object/array
+- I used setTimeOut to wait html finish loading DOM for products list
+
 For bonus points, throw in some of these:
 
 1. It takes a second or two to load the page. Let the user know that the page is still loading until the page renders.
@@ -27,6 +49,20 @@ For bonus points, throw in some of these:
 3. Optimize and improve the code and layout where you see fit (and tell us how and why you did)
 4. Give any thoughts or commentary on your solution.  What things would you optimize?  If you could use libraries, what libraries would you use?
 
+[ x ] It takes a second or two to load the page. Let the user know that the page is still loading until the page renders.
+- line 22 - 24 in script.js
+
+[ x ] Use some kind of transition when removing a product from the page via the "X"
+- Use jQuery fadeOut to animates the opacity of the remove product 
+- line 147 - 149 in script.js
+
+[ x ] Optimize and improve the code and layout where you see fit (and tell us how and why you did)
+- Improved accessibility by adding event clicker for the button (Remove product)
+- Truncate the string for product description for overlay functionality (line 78 - 93 in script.js)
+- Style modifications: changed background color, added box shadow
+
+[ x ] Give any thoughts or commentary on your solution.  What things would you optimize?  If you could use libraries, what libraries would you use?
+- I would React.js library to create components of each product-container class element to render images and other details. I would have used componentDidMount to use fetch promise method to json data and then set the state for the data. Then, I would render into ProductCard component.
 
 ## How to submit your results
 

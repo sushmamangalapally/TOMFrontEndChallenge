@@ -1,6 +1,12 @@
-<div class="product-container {custom_class}">
+<div class="product-container {custom_class}" id={id}>
+    <button class="remove"><span id={spanId} class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
   <a href="{url}">
-    <img src="{image}">
+    <div class="productImg">
+      <img src="{image}" alt={name}>
+      <div class="overlay">
+          {description}
+        </div>
+    </div>
     <div class="description">
       <div class="title">{title}</div>
       <div class="tagline">{tagline}</div>
